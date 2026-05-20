@@ -313,8 +313,8 @@ img { max-width: 100%; display: block; }
 }
 
 #slide-1 .cover-mark {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.10);
   display: flex;
@@ -325,9 +325,10 @@ img { max-width: 100%; display: block; }
   animation: cover-float 6s ease-in-out infinite;
 }
 
-#slide-1 .cover-mark svg {
-  width: 88px;
-  height: 88px;
+#slide-1 .cover-mark .cover-logo {
+  width: 76%;
+  height: auto;
+  display: block;
 }
 
 @keyframes cover-float {
