@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vulpix · La evolución de los Agentes de IA</title>
+  <meta name="description" content="De los LLMs a los equipos multi-agente: un recorrido visual por la evolución reciente de los agentes de IA, presentado por Vulpix." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       Fixed brand bar
+       ============================================================ -->
+  <header class="brandbar" aria-label="Brand bar">
+    <img class="logo" src="./styles/images/logo-purple-horizontal@2x.webp" alt="Vulpix" />
+    <div class="meta"><strong>La evolución de los agentes de IA</strong> · 2020 → 2026</div>
+  </header>
+
+  <!-- ============================================================
+       Side dot navigation
+       ============================================================ -->
+  <nav class="dotnav" id="dotnav" aria-label="Slide indicator"></nav>
+
+  <!-- ============================================================
+       Arrow navigation
+       ============================================================ -->
+  <div class="arrows" aria-label="Slide controls">
+    <button id="prev" type="button" aria-label="Diapositiva anterior">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button id="next" type="button" aria-label="Siguiente diapositiva">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <main class="deck">
+
+    <!-- ============================================================
+         Slide 1 — Cover
+         ============================================================ -->
+    <section class="slide" id="slide-1" data-index="1" data-theme="dark">
+      <div class="slide-inner">
+        <div class="cover-mark" aria-hidden="true">
+          <!-- Fox-tail glyph in white -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 46c0-12 8-22 18-22 4 0 6 1 8 3-1-10-7-17-15-17-9 0-15 8-15 18 0 7 1 13 4 18z" fill="#fff" opacity=".95"/>
+            <path d="M34 46c8 0 14-6 14-14 0-2-1-4-2-5-1 5-5 9-10 10-4 1-7 4-2 9z" fill="#ffb1d5"/>
+            <circle cx="22" cy="28" r="2.2" fill="#57004e"/>
+          </svg>
+        </div>
+        <span class="eyebrow">Vulpix · Sesión</span>
+        <h1 class="headline">La evolución de los <em>Agentes de IA</em></h1>
+        <p class="lede">De los LLMs a los equipos multi-agente: un recorrido visual por seis hitos que han transformado cómo el software piensa, decide y actúa.</p>
+        <p class="byline">Por <strong>Iñaki Gorostiza</strong> · <a href="mailto:igorostiza@lin3s.com">igorostiza@lin3s.com</a></p>
+      </div>
+      <div class="scroll-hint">Desliza para empezar</div>
+    </section>
+
+    <!-- ============================================================
+         Slide 2 — LLMs (foundation)
+         ============================================================ -->
+    <section class="slide" id="slide-2" data-index="2">
+      <div class="slide-badge">02 / 08</div>
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="eyebrow">01 · Fundamento</span>
+          <h2 class="headline">Los LLMs, <em>cerebros entrenados a escala</em></h2>
+          <p class="lede">Modelos de lenguaje entrenados con billones de tokens. Predicen la siguiente palabra y, en el camino, aprenden lógica, código y matices del idioma.</p>
+          <ul class="points">
+            <li><span><strong>Cómo funcionan:</strong> tokens entran, un transformer los pondera con atención, tokens salen.</span></li>
+            <li><span><strong>Hitos recientes:</strong> GPT-3 (2020), GPT-4 (2023), Claude 3.7 (2024), Gemini 2 (2025).</span></li>
+            <li><span><strong>Limitaciones:</strong> sin memoria persistente y sin capacidad de actuar fuera del chat.</span></li>
+          </ul>
+        </div>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2-purple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%"  stop-color="#672483"/>
+                <stop offset="100%" stop-color="#951b80"/>
+              </linearGradient>
+              <linearGradient id="g2-pink" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"  stop-color="#ff52a3"/>
+                <stop offset="100%" stop-color="#ff1884"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Input tokens (left) -->
+            <g class="pop">
+              <rect x="20"  y="80"  width="80" height="28" rx="8" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <text x="60" y="99" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">Hola</text>
+              <rect x="20"  y="120" width="80" height="28" rx="8" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <text x="60" y="139" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">,</text>
+              <rect x="20"  y="160" width="80" height="28" rx="8" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <text x="60" y="179" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">¿qué</text>
+              <rect x="20"  y="200" width="80" height="28" rx="8" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <text x="60" y="219" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">tal?</text>
+            </g>
+
+            <!-- Transformer block -->
+            <g class="pop">
+              <rect x="160" y="80" width="160" height="200" rx="22" fill="url(#g2-purple)"/>
+              <text x="240" y="118" text-anchor="middle" font-family="Manrope" font-size="14" font-weight="700" fill="#fff" letter-spacing="2">TRANSFORMER</text>
+              <!-- Layer lines -->
+              <g stroke="#ffb1d5" stroke-width="1.4" opacity=".75">
+                <line x1="180" y1="140" x2="300" y2="140"/>
+                <line x1="180" y1="170" x2="300" y2="170"/>
+                <line x1="180" y1="200" x2="300" y2="200"/>
+                <line x1="180" y1="230" x2="300" y2="230"/>
+                <line x1="180" y1="260" x2="300" y2="260"/>
+              </g>
+              <!-- Attention dots -->
+              <g fill="#ff1884">
+                <circle cx="200" cy="170" r="3.5"/>
+                <circle cx="240" cy="200" r="3.5"/>
+                <circle cx="280" cy="230" r="3.5"/>
+                <circle cx="220" cy="260" r="3.5"/>
+              </g>
+            </g>
+
+            <!-- Connection lines input -> transformer -->
+            <g stroke="url(#g2-purple)" stroke-width="1.8" fill="none" class="draw">
+              <path d="M100 94  C 130 94, 140 110, 160 110"/>
+              <path d="M100 134 C 130 134, 140 130, 160 130"/>
+              <path d="M100 174 C 130 174, 140 170, 160 170"/>
+              <path d="M100 214 C 130 214, 140 210, 160 210"/>
+            </g>
+
+            <!-- Connection lines transformer -> output -->
+            <g stroke="url(#g2-pink)" stroke-width="1.8" fill="none" class="draw">
+              <path d="M320 160 C 350 160, 360 150, 380 150"/>
+              <path d="M320 200 C 350 200, 360 200, 380 200"/>
+              <path d="M320 240 C 350 240, 360 250, 380 250"/>
+            </g>
+
+            <!-- Output tokens (right) -->
+            <g class="pop">
+              <rect x="380" y="136" width="80" height="28" rx="8" fill="#fff" stroke="#ff1884" stroke-width="1.6"/>
+              <text x="420" y="155" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">¡Bien!</text>
+              <rect x="380" y="186" width="80" height="28" rx="8" fill="#fff" stroke="#ff1884" stroke-width="1.6"/>
+              <text x="420" y="205" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">¿Y</text>
+              <rect x="380" y="236" width="80" height="28" rx="8" fill="#fff" stroke="#ff1884" stroke-width="1.6"/>
+              <text x="420" y="255" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#57004e">tú?</text>
+            </g>
+
+            <text x="60"  y="60"  text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">INPUT</text>
+            <text x="240" y="60"  text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">PROCESAMIENTO</text>
+            <text x="420" y="115" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">OUTPUT</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Slide 3 — What is an AI Agent
+         ============================================================ -->
+    <section class="slide" id="slide-3" data-index="3">
+      <div class="slide-badge">03 / 08</div>
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="eyebrow">02 · Definición</span>
+          <h2 class="headline">¿Qué es un <em>agente de IA</em>?</h2>
+          <p class="lede">Un agente añade al LLM tres ingredientes: <strong>herramientas</strong> para actuar, <strong>memoria</strong> para recordar y un <strong>bucle</strong> para perseguir objetivos.</p>
+          <ul class="points">
+            <li><span><strong>Percibe:</strong> recibe el contexto, lee documentos, consulta APIs.</span></li>
+            <li><span><strong>Razona:</strong> el LLM decide el siguiente paso.</span></li>
+            <li><span><strong>Actúa:</strong> ejecuta una herramienta (búsqueda, código, email).</span></li>
+            <li><span><strong>Observa:</strong> incorpora el resultado y vuelve a empezar.</span></li>
+          </ul>
+        </div>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g3-purple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#672483"/>
+                <stop offset="100%" stop-color="#951b80"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Center agent -->
+            <g class="pop">
+              <circle cx="240" cy="180" r="56" fill="url(#g3-purple)"/>
+              <text x="240" y="176" text-anchor="middle" font-family="Manrope" font-size="14" font-weight="700" fill="#fff">AGENTE</text>
+              <text x="240" y="196" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="500" fill="#ffb1d5" letter-spacing="2">LLM + LOOP</text>
+            </g>
+
+            <!-- 4 nodes around (top, right, bottom, left) -->
+            <g class="pop">
+              <circle cx="240" cy="56"  r="38" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="240" y="54" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="700" fill="#57004e">PERCIBIR</text>
+              <text x="240" y="70" text-anchor="middle" font-family="Manrope" font-size="9" font-weight="500" fill="#951b80">contexto</text>
+            </g>
+            <g class="pop">
+              <circle cx="396" cy="180" r="38" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="396" y="178" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="700" fill="#57004e">RAZONAR</text>
+              <text x="396" y="194" text-anchor="middle" font-family="Manrope" font-size="9" font-weight="500" fill="#951b80">plan</text>
+            </g>
+            <g class="pop">
+              <circle cx="240" cy="304" r="38" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <text x="240" y="302" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="700" fill="#57004e">ACTUAR</text>
+              <text x="240" y="318" text-anchor="middle" font-family="Manrope" font-size="9" font-weight="500" fill="#ff1884">herramienta</text>
+            </g>
+            <g class="pop">
+              <circle cx="84"  cy="180" r="38" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="84" y="178" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="700" fill="#57004e">OBSERVAR</text>
+              <text x="84" y="194" text-anchor="middle" font-family="Manrope" font-size="9" font-weight="500" fill="#951b80">resultado</text>
+            </g>
+
+            <!-- Arrows clockwise -->
+            <g fill="none" stroke="url(#g3-purple)" stroke-width="2.2" stroke-linecap="round" class="draw">
+              <path d="M278  76 A 130 130 0 0 1 378 142" marker-end="url(#arrowhead-p)"/>
+              <path d="M378 220 A 130 130 0 0 1 278 284" marker-end="url(#arrowhead-p)"/>
+              <path d="M202 284 A 130 130 0 0 1 102 218" marker-end="url(#arrowhead-p)"/>
+              <path d="M102 142 A 130 130 0 0 1 202  76" marker-end="url(#arrowhead-p)"/>
+            </g>
+
+            <defs>
+              <marker id="arrowhead-p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="#951b80"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Slide 4 — n8n
+         ============================================================ -->
+    <section class="slide" id="slide-4" data-index="4">
+      <div class="slide-badge">04 / 08</div>
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="eyebrow">03 · Integración</span>
+          <h2 class="headline">LLMs en <em>flujos de trabajo</em>: n8n</h2>
+          <p class="lede">El primer salto al mundo real: incrustar un LLM como un nodo más dentro de automatizaciones low-code que ya gestionan tickets, correos o CRMs.</p>
+          <ul class="points">
+            <li><span><strong>Trigger → LLM → acción:</strong> el modelo se vuelve una pieza de la cadena.</span></li>
+            <li><span><strong>Sin código:</strong> conecta APIs, bases de datos y SaaS arrastrando nodos.</span></li>
+            <li><span><strong>Casos típicos:</strong> clasificar emails, resumir tickets, enriquecer leads.</span></li>
+          </ul>
+        </div>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g4-purple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#672483"/>
+                <stop offset="100%" stop-color="#951b80"/>
+              </linearGradient>
+              <linearGradient id="g4-pink" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"  stop-color="#ff52a3"/>
+                <stop offset="100%" stop-color="#ff1884"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Bezier connectors -->
+            <g fill="none" stroke="url(#g4-purple)" stroke-width="2.2" class="draw">
+              <path d="M84  90 C 160 90, 160 180, 220 180"/>
+              <path d="M84 270 C 160 270, 160 180, 220 180"/>
+              <path d="M316 180 C 360 180, 360  90, 408  90"/>
+              <path d="M316 180 C 360 180, 360 180, 408 180"/>
+              <path d="M316 180 C 360 180, 360 270, 408 270"/>
+            </g>
+
+            <!-- Trigger nodes (left) -->
+            <g class="pop">
+              <rect x="18" y="64" width="66" height="52" rx="12" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <circle cx="36" cy="90" r="6" fill="#951b80"/>
+              <text x="52" y="94" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Email</text>
+            </g>
+            <g class="pop">
+              <rect x="18" y="244" width="66" height="52" rx="12" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <circle cx="36" cy="270" r="6" fill="#951b80"/>
+              <text x="52" y="274" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Form</text>
+            </g>
+
+            <!-- Center LLM node -->
+            <g class="pop">
+              <rect x="220" y="150" width="96" height="64" rx="14" fill="url(#g4-purple)"/>
+              <text x="268" y="178" text-anchor="middle" font-family="Manrope" font-size="14" font-weight="700" fill="#fff">LLM</text>
+              <text x="268" y="196" text-anchor="middle" font-family="Manrope" font-size="9" font-weight="500" fill="#ffb1d5" letter-spacing="1.5">NODO IA</text>
+            </g>
+
+            <!-- Action nodes (right) -->
+            <g class="pop">
+              <rect x="408" y="64" width="66" height="52" rx="12" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <circle cx="426" cy="90" r="6" fill="#ff1884"/>
+              <text x="442" y="94" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">CRM</text>
+            </g>
+            <g class="pop">
+              <rect x="408" y="154" width="66" height="52" rx="12" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <circle cx="426" cy="180" r="6" fill="#ff1884"/>
+              <text x="442" y="184" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Slack</text>
+            </g>
+            <g class="pop">
+              <rect x="408" y="244" width="66" height="52" rx="12" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <circle cx="426" cy="270" r="6" fill="#ff1884"/>
+              <text x="442" y="274" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">DB</text>
+            </g>
+
+            <text x="51"  y="40"  text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">TRIGGERS</text>
+            <text x="268" y="138" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">PROCESO</text>
+            <text x="441" y="40"  text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">ACCIONES</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Slide 5 — Cloud CoWork
+         ============================================================ -->
+    <section class="slide" id="slide-5" data-index="5">
+      <div class="slide-badge">05 / 08</div>
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="eyebrow">04 · Plataformas</span>
+          <h2 class="headline"><em>Claude CoWork</em>: tu compañero en la nube</h2>
+          <p class="lede">Claude vive en la nube y colabora contigo en tiempo real: lee tu repositorio, planifica, ejecuta tareas y te devuelve el resultado como un miembro más del equipo.</p>
+          <ul class="points">
+            <li><span><strong>En la nube:</strong> trabaja en segundo plano, sin instalar nada en local.</span></li>
+            <li><span><strong>Acceso al contexto:</strong> repos, documentos y herramientas del equipo.</span></li>
+            <li><span><strong>Tareas asíncronas:</strong> delegas, sigues a lo tuyo, recibes el resultado.</span></li>
+            <li><span><strong>Trazabilidad:</strong> cada acción queda registrada para revisión humana.</span></li>
+          </ul>
+        </div>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g5-purple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#672483"/>
+                <stop offset="100%" stop-color="#951b80"/>
+              </linearGradient>
+              <radialGradient id="g5-glow" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%"   stop-color="#ff1884" stop-opacity=".25"/>
+                <stop offset="100%" stop-color="#ff1884" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Soft glow behind cloud -->
+            <circle cx="240" cy="180" r="120" fill="url(#g5-glow)"/>
+
+            <!-- Cloud shape -->
+            <g class="pop">
+              <path d="M170 200 Q 130 200 130 165 Q 130 130 165 130 Q 170 100 210 100 Q 250 90 268 120 Q 305 110 320 145 Q 360 145 360 180 Q 360 215 320 215 L 175 215 Q 170 215 170 200 Z"
+                    fill="url(#g5-purple)"/>
+              <text x="245" y="162" text-anchor="middle" font-family="Manrope" font-size="15" font-weight="700" fill="#fff">CLAUDE</text>
+              <text x="245" y="184" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#ffb1d5" letter-spacing="2">CO-WORK</text>
+            </g>
+
+            <!-- Orbit guide -->
+            <g fill="none" stroke="#951b80" stroke-width="1" stroke-dasharray="2 4" opacity=".4">
+              <ellipse cx="240" cy="180" rx="180" ry="90"/>
+            </g>
+
+            <!-- Work context (right side & bottom): repo, docs, tools -->
+            <g class="pop">
+              <circle cx="60"  cy="180" r="26" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <text x="60" y="184" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">REPO</text>
+            </g>
+            <g class="pop">
+              <circle cx="240" cy="280" r="26" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <text x="240" y="284" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">DOCS</text>
+            </g>
+            <g class="pop">
+              <circle cx="420" cy="180" r="26" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <text x="420" y="184" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">TOOLS</text>
+            </g>
+
+            <!-- People (top): you + team -->
+            <g class="pop">
+              <circle cx="150" cy="76"  r="22" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="150" y="80" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">tú</text>
+            </g>
+            <g class="pop">
+              <circle cx="340" cy="76"  r="22" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="340" y="80" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">equipo</text>
+            </g>
+
+            <!-- Connection rays -->
+            <g stroke="url(#g5-purple)" stroke-width="1.6" stroke-linecap="round" class="draw">
+              <line x1="86"  y1="180" x2="170" y2="180"/>
+              <line x1="240" y1="254" x2="240" y2="220"/>
+              <line x1="394" y1="180" x2="320" y2="180"/>
+              <line x1="160" y1="94"  x2="200" y2="120"/>
+              <line x1="330" y1="94"  x2="290" y2="120"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Slide 6 — RAG / NotebookLM
+         ============================================================ -->
+    <section class="slide" id="slide-6" data-index="6">
+      <div class="slide-badge">06 / 08</div>
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="eyebrow">05 · Conocimiento</span>
+          <h2 class="headline">RAG: <em>NotebookLM</em> y la memoria externa</h2>
+          <p class="lede">Retrieval-Augmented Generation deja al LLM consultar tu propio corpus antes de responder. NotebookLM es el caso más visible: subes documentos, te responde con citas.</p>
+          <ul class="points">
+            <li><span><strong>Indexar:</strong> los documentos se trocean y se convierten en vectores (embeddings).</span></li>
+            <li><span><strong>Recuperar:</strong> ante una pregunta, se buscan los fragmentos más relevantes.</span></li>
+            <li><span><strong>Generar:</strong> el LLM redacta la respuesta apoyándose en esas fuentes.</span></li>
+          </ul>
+        </div>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g6-purple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#672483"/>
+                <stop offset="100%" stop-color="#951b80"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Query box -->
+            <g class="pop">
+              <rect x="20" y="146" width="110" height="68" rx="14" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="75" y="174" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">PREGUNTA</text>
+              <text x="75" y="192" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#951b80">"resume X"</text>
+            </g>
+
+            <!-- Vector store (documents stacked) -->
+            <g class="pop">
+              <rect x="170" y="40" width="140" height="100" rx="12" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <g fill="#ffffff" stroke="#951b80" stroke-width="1.4">
+                <rect x="186" y="56" width="80" height="14" rx="3"/>
+                <rect x="186" y="76" width="80" height="14" rx="3"/>
+                <rect x="186" y="96" width="80" height="14" rx="3"/>
+                <rect x="186" y="116" width="80" height="14" rx="3"/>
+              </g>
+              <g fill="#ff1884">
+                <circle cx="284" cy="63"  r="4"/>
+                <circle cx="284" cy="83"  r="4"/>
+                <circle cx="284" cy="103" r="4"/>
+                <circle cx="284" cy="123" r="4"/>
+              </g>
+              <text x="240" y="32" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e" letter-spacing="1.5">VECTOR STORE</text>
+            </g>
+
+            <!-- Retrieved chunks -->
+            <g class="pop">
+              <rect x="180" y="170" width="120" height="40" rx="10" fill="#fff" stroke="#ff1884" stroke-width="1.6"/>
+              <text x="240" y="195" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">3 fragmentos</text>
+            </g>
+
+            <!-- LLM -->
+            <g class="pop">
+              <rect x="170" y="240" width="140" height="80" rx="14" fill="url(#g6-purple)"/>
+              <text x="240" y="270" text-anchor="middle" font-family="Manrope" font-size="14" font-weight="700" fill="#fff">LLM</text>
+              <text x="240" y="290" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#ffb1d5">pregunta + fuentes</text>
+              <text x="240" y="306" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#ffb1d5">+ instrucciones</text>
+            </g>
+
+            <!-- Answer with citations -->
+            <g class="pop">
+              <rect x="350" y="240" width="110" height="80" rx="14" fill="#fff" stroke="#ff1884" stroke-width="1.6"/>
+              <text x="405" y="268" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">RESPUESTA</text>
+              <g fill="#951b80">
+                <rect x="362" y="280" width="60" height="4" rx="2"/>
+                <rect x="362" y="290" width="86" height="4" rx="2"/>
+                <rect x="362" y="300" width="48" height="4" rx="2"/>
+              </g>
+              <text x="445" y="312" font-family="Manrope" font-size="9" font-weight="700" fill="#ff1884">[1][2]</text>
+            </g>
+
+            <!-- Arrows -->
+            <g fill="none" stroke="url(#g6-purple)" stroke-width="2" stroke-linecap="round" class="draw">
+              <path d="M130 180 C 152 180, 156 100, 170  90"/>
+              <path d="M240 144 L 240 168"/>
+              <path d="M240 212 L 240 238"/>
+              <path d="M130 200 C 152 200, 152 280, 170 280"/>
+              <path d="M310 280 L 348 280"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Slide 7 — Multi-agent / Vibe coding
+         ============================================================ -->
+    <section class="slide" id="slide-7" data-index="7">
+      <div class="slide-badge">07 / 08</div>
+      <div class="slide-inner">
+        <div class="slide-text">
+          <span class="eyebrow">06 · Frontera</span>
+          <h2 class="headline">Orquestación multi-agente: <em>Vibe coding</em></h2>
+          <p class="lede">Un orquestador delega en sub-agentes especializados. Tú fijas la intención (el "vibe"); el equipo de agentes planifica, codifica, revisa y verifica.</p>
+          <ul class="points">
+            <li><span><strong>Plan:</strong> descompone la intención en pasos accionables.</span></li>
+            <li><span><strong>Code:</strong> escribe la implementación pieza a pieza.</span></li>
+            <li><span><strong>Review:</strong> audita la calidad y los riesgos del cambio.</span></li>
+            <li><span><strong>Verify:</strong> ejecuta y comprueba el resultado real.</span></li>
+          </ul>
+        </div>
+        <div class="diagram" aria-hidden="true">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g7-purple" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#672483"/>
+                <stop offset="100%" stop-color="#951b80"/>
+              </linearGradient>
+              <linearGradient id="g7-pink" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"  stop-color="#ff52a3"/>
+                <stop offset="100%" stop-color="#ff1884"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Lines orchestrator -> satellites -->
+            <g fill="none" stroke="url(#g7-purple)" stroke-width="2" stroke-linecap="round" class="draw">
+              <path d="M240 180 L 100  70"/>
+              <path d="M240 180 L 380  70"/>
+              <path d="M240 180 L 100 290"/>
+              <path d="M240 180 L 380 290"/>
+              <path d="M240 180 L  60 180"/>
+              <path d="M240 180 L 420 180"/>
+            </g>
+
+            <!-- Orchestrator center -->
+            <g class="pop">
+              <circle cx="240" cy="180" r="50" fill="url(#g7-purple)"/>
+              <text x="240" y="176" text-anchor="middle" font-family="Manrope" font-size="13" font-weight="700" fill="#fff">ORQUESTADOR</text>
+              <text x="240" y="196" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#ffb1d5">intención</text>
+            </g>
+
+            <!-- Satellites -->
+            <g class="pop">
+              <circle cx="100" cy="70"  r="30" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="100" y="74" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Plan</text>
+            </g>
+            <g class="pop">
+              <circle cx="380" cy="70"  r="30" fill="#fff" stroke="#951b80" stroke-width="2"/>
+              <text x="380" y="74" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Code</text>
+            </g>
+            <g class="pop">
+              <circle cx="100" cy="290" r="30" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <text x="100" y="294" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Review</text>
+            </g>
+            <g class="pop">
+              <circle cx="380" cy="290" r="30" fill="#fff" stroke="#ff1884" stroke-width="2"/>
+              <text x="380" y="294" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#57004e">Verify</text>
+            </g>
+            <g class="pop">
+              <circle cx="60"  cy="180" r="24" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <text x="60" y="184" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">Docs</text>
+            </g>
+            <g class="pop">
+              <circle cx="420" cy="180" r="24" fill="#f5f4f9" stroke="#951b80" stroke-width="1.5"/>
+              <text x="420" y="184" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="700" fill="#57004e">Tools</text>
+            </g>
+
+            <!-- Human at the top -->
+            <g class="pop">
+              <rect x="200" y="14" width="80" height="32" rx="16" fill="url(#g7-pink)"/>
+              <text x="240" y="34" text-anchor="middle" font-family="Manrope" font-size="11" font-weight="700" fill="#fff">HUMANO</text>
+            </g>
+            <g fill="none" stroke="url(#g7-pink)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4" class="draw">
+              <path d="M240 46 L 240 130"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Slide 8 — Closing / Timeline
+         ============================================================ -->
+    <section class="slide" id="slide-8" data-index="8">
+      <div class="slide-badge">08 / 08</div>
+      <div class="slide-inner">
+        <span class="eyebrow">Cierre</span>
+        <h2 class="headline">De copiloto a equipo: <em>¿qué sigue?</em></h2>
+        <p class="lede">En seis años hemos pasado de modelos que completan frases a equipos de agentes que entregan trabajo. La próxima ola está aprendiendo a coordinarse sola.</p>
+
+        <div class="diagram timeline" aria-hidden="true">
+          <svg viewBox="0 0 960 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g8-line" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"   stop-color="#672483"/>
+                <stop offset="50%"  stop-color="#951b80"/>
+                <stop offset="100%" stop-color="#ff1884"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Timeline rail -->
+            <line x1="60" y1="120" x2="900" y2="120" stroke="url(#g8-line)" stroke-width="4" stroke-linecap="round" class="draw"/>
+
+            <!-- Milestones -->
+            <g font-family="Manrope" font-weight="700" fill="#57004e">
+              <g class="pop">
+                <circle cx="80"  cy="120" r="10" fill="#672483"/>
+                <text x="80"  y="90"  text-anchor="middle" font-size="13">2020</text>
+                <text x="80"  y="156" text-anchor="middle" font-size="11" font-weight="500">LLMs</text>
+              </g>
+              <g class="pop">
+                <circle cx="230" cy="120" r="10" fill="#7a1f82"/>
+                <text x="230" y="90"  text-anchor="middle" font-size="13">2022</text>
+                <text x="230" y="156" text-anchor="middle" font-size="11" font-weight="500">Chatbots</text>
+              </g>
+              <g class="pop">
+                <circle cx="380" cy="120" r="10" fill="#8c1c81"/>
+                <text x="380" y="90"  text-anchor="middle" font-size="13">2023</text>
+                <text x="380" y="156" text-anchor="middle" font-size="11" font-weight="500">Agentes + RAG</text>
+              </g>
+              <g class="pop">
+                <circle cx="530" cy="120" r="10" fill="#951b80"/>
+                <text x="530" y="90"  text-anchor="middle" font-size="13">2024</text>
+                <text x="530" y="156" text-anchor="middle" font-size="11" font-weight="500">n8n + NotebookLM</text>
+              </g>
+              <g class="pop">
+                <circle cx="680" cy="120" r="10" fill="#c01a8e"/>
+                <text x="680" y="90"  text-anchor="middle" font-size="13">2025</text>
+                <text x="680" y="156" text-anchor="middle" font-size="11" font-weight="500">Claude CoWork</text>
+              </g>
+              <g class="pop">
+                <circle cx="830" cy="120" r="12" fill="#ff1884"/>
+                <text x="830" y="86"  text-anchor="middle" font-size="13">2026</text>
+                <text x="830" y="156" text-anchor="middle" font-size="11" font-weight="500">Vibe coding · Multi-agent</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./scripts/navigation.js" defer></script>
+</body>
+</html>
